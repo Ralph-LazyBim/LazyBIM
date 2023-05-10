@@ -1,0 +1,1015 @@
+{
+  "Uuid": "3c9d0464-8643-5ffe-96e5-ab1769818209",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "Renumber Grids",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [
+    {
+      "Id": "077f09ce03ca446e95ea2ef4a630050e",
+      "Name": "Categories",
+      "Type": "dropdownSelection",
+      "Value": "OST_Grids",
+      "Description": "All built-in categories.",
+      "SelectedIndex": 287
+    },
+    {
+      "Id": "afef03aedc6246a98bf6418253a108c6",
+      "Name": "Reset Grid Selecting",
+      "Type": "boolean",
+      "Value": "false",
+      "Description": "Selection between a true and false.",
+      "SelectedIndex": 0
+    },
+    {
+      "Id": "fdc82f48a554469daad17ca67a67bb5e",
+      "Name": "Prefix Label",
+      "Type": "string",
+      "Value": "4",
+      "Description": "Creates a string.",
+      "SelectedIndex": 0
+    },
+    {
+      "Id": "2a0cb3dae5d145ae9217c185425b72de",
+      "Name": "Prefix Yes/No",
+      "Type": "boolean",
+      "Value": "true",
+      "Description": "Selection between a true and false.",
+      "SelectedIndex": 0
+    },
+    {
+      "Id": "399ed3b08f0e4231bbdff2916ea64c59",
+      "Name": "Prefix Separator",
+      "Type": "string",
+      "Value": ".",
+      "Description": "Creates a string.",
+      "SelectedIndex": 0
+    },
+    {
+      "Id": "bbe9a2fab79c437a8d0a9d794bc076d2",
+      "Name": "Reverse Order Vertical Grids",
+      "Type": "boolean",
+      "Value": "false",
+      "Description": "Selection between a true and false.",
+      "SelectedIndex": 0
+    },
+    {
+      "Id": "85a1418a2fae411ebdb0a398efaeafb9",
+      "Name": "Reverse Order Horizontal Grids",
+      "Type": "boolean",
+      "Value": "false",
+      "Description": "Selection between a true and false.",
+      "SelectedIndex": 0
+    }
+  ],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "1..100;",
+      "Id": "c070775af1d44663aeeaf1d64db6c4a1",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "fbd09fd57efa4220ba3f2dad7903b281",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
+      "FunctionSignature": "58f9bd74-bb7e-420d-a95b-8ca242296c2c",
+      "FunctionType": "Graph",
+      "NodeType": "FunctionNode",
+      "Id": "b0c46d8ad0c2495086630a39492cb26d",
+      "Inputs": [
+        {
+          "Id": "e9eef38a4ae143b1ac38e3b3a0e73cf9",
+          "Name": "n",
+          "Description": "int",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "7e5c25afbeee422391cb88e568e31a8b",
+          "Name": "upperCase",
+          "Description": "bool\nDefault value : false",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "b47e117313ca40faaf763d3b5857b3c7",
+          "Name": "str",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Converts a number into a character (where 1 = A, 2 = B, ... , 27 = AA, 28 = AB etc.)."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "Prefix_Label + Separator;",
+      "Id": "7ee86ede8b7245e6b00e8908077e47ea",
+      "Inputs": [
+        {
+          "Id": "b139120963394f02affc7ccd79c4a212",
+          "Name": "Prefix_Label",
+          "Description": "Prefix_Label",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "578d004e630d424d84e84075060f9ef2",
+          "Name": "Separator",
+          "Description": "Separator",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "be2894748e1a43c28a195649a38e31a1",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.Categories, DSRevitNodesUI",
+      "SelectedIndex": 287,
+      "SelectedString": "OST_Grids",
+      "NodeType": "ExtensionNode",
+      "Id": "077f09ce03ca446e95ea2ef4a630050e",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "267f08980850424cb001735b947ba78c",
+          "Name": "Category",
+          "Description": "The selected Category.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "All built-in categories."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "out[0];\nout[1];",
+      "Id": "711c5a1e3cc249eaa758e642eb0580f0",
+      "Inputs": [
+        {
+          "Id": "acc14305775b411a9583f83eba269438",
+          "Name": "out",
+          "Description": "out",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "52104139f478480088ab6697abbfe16a",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f0246adba8fa4048911d57022dcdc69c",
+          "Name": "",
+          "Description": "Value of expression at line 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.BoolSelector, CoreNodeModels",
+      "NodeType": "BooleanInputNode",
+      "InputValue": false,
+      "Id": "afef03aedc6246a98bf6418253a108c6",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "e701cb42589f434b8c46b2d167e1715a",
+          "Name": "",
+          "Description": "Boolean",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Selection between a true and false."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.BoolSelector, CoreNodeModels",
+      "NodeType": "BooleanInputNode",
+      "InputValue": true,
+      "Id": "52b19e8626994b0885ef7f5d4ce94325",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "90592d658deb483fa9db125b4c696969",
+          "Name": "",
+          "Description": "Boolean",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Selection between a true and false."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "NodeType": "StringInputNode",
+      "InputValue": "4",
+      "Id": "fdc82f48a554469daad17ca67a67bb5e",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "be6abe04e578488993038a9a1ae1e71c",
+          "Name": "",
+          "Description": "String",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.BoolSelector, CoreNodeModels",
+      "NodeType": "BooleanInputNode",
+      "InputValue": true,
+      "Id": "2a0cb3dae5d145ae9217c185425b72de",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "a53aa48512ad4c3d8cf82cc907ad1142",
+          "Name": "",
+          "Description": "Boolean",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Selection between a true and false."
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Load the Python Standard and DesignScript Libraries\r\nimport clr\r\n#Import RevitAPI\r\nclr.AddReference(\"RevitAPI\")\r\nimport Autodesk.Revit.DB as DB\r\nimport math\r\n\r\n# The inputs to this node will be stored as a list in the IN variables.\r\ngrids = UnwrapElement(IN[0])\r\nreverse_horizontal = IN[1]\r\nreverse_vertical = IN[2]\r\n\r\n# Separate gridlines by orientation\r\ndef separate_by_orientation(grids):\r\n    h_grids = []\r\n    v_grids = []\r\n    for grid in grids:\r\n        if isinstance(grid, DB.Grid) and not grid.IsCurved:\r\n            vector = grid.Curve.GetEndPoint(0) - grid.Curve.GetEndPoint(1)\r\n            angle = vector.AngleTo(DB.XYZ.BasisY) * (180/math.pi)\r\n            if (45 <= angle <= 135) or (225 <= angle <= 315):\r\n                h_grids.append(grid)\r\n            else:\r\n                v_grids.append(grid)\r\n    return {\r\n        \"horizontal_grids\": sorted(h_grids, key=lambda x: x.Curve.GetEndPoint(0).Y, reverse=reverse_horizontal),\r\n        \"vertical_grids\": sorted(v_grids, key=lambda x: x.Curve.GetEndPoint(0).X, reverse=reverse_vertical)}\r\n        \r\nOUT = separate_by_orientation(grids)[\"vertical_grids\"], separate_by_orientation(grids)[\"horizontal_grids\"]",
+      "Engine": "IronPython2",
+      "VariableInputPorts": true,
+      "Id": "9999e594f53e48e49d42fc7d16025ad5",
+      "Inputs": [
+        {
+          "Id": "7306d32b169b47b091c72dbfb1cafb5b",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "32e49dcd727e412dbade7021e4980891",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d71d0d1eb9334f0ca29a7911bd4c722c",
+          "Name": "IN[2]",
+          "Description": "Input #2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "47b1fd5797d541f49ec503ab1db6972f",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded Python script."
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Load the Python Standard and DesignScript Libraries\r\nimport clr\r\n# Import DocumentManager\r\nclr.AddReference(\"RevitServices\")\r\nimport RevitServices\r\nfrom RevitServices.Persistence import DocumentManager\r\n\r\n#Import RevitAPI\r\nclr.AddReference(\"RevitAPI\")\r\nfrom Autodesk.Revit.DB import *\r\n\r\n# The inputs to this node will be stored as a list in the IN variables.\r\nvertical_grids = UnwrapElement(IN[0])\r\nhorizontal_grids = UnwrapElement(IN[1])\r\nvertical_grid_labels = IN[2]\r\nhorizontal_grid_labels = IN[3]\r\nprefix = IN[4]\r\nprefix_toggle = IN[5]\r\n\r\n# Renumber grids\r\ndef Renumber(vertical_grids, horizontal_grids, vertical_grid_labels, horizontal_grid_labels, prefix, prefix_toggle):\r\n    doc = DocumentManager.Instance.CurrentDBDocument\r\n    with Transaction(doc) as t:\r\n        t.Start(\"Refresh Grid labels\")\r\n        for i, grid in enumerate(vertical_grids):\r\n            if i < len(vertical_grid_labels):\r\n                if prefix_toggle:\r\n                    grid.Name = \"N/A-\" + prefix + str(vertical_grid_labels[i])\r\n                else:\r\n                    grid.Name = \"N/A-\" + str(vertical_grid_labels[i])\r\n        for i, grid in enumerate(horizontal_grids):\r\n            if i < len(horizontal_grid_labels):\r\n                if prefix_toggle:\r\n                    grid.Name = \"N/A-\" + prefix + str(horizontal_grid_labels[i])\r\n                else:\r\n                    grid.Name = \"N/A-\" + str(horizontal_grid_labels[i])\r\n        t.Commit()\r\n    with Transaction(doc) as t:\r\n        t.Start(\"Renumbering Grids\")\r\n        for i, grid in enumerate(vertical_grids):\r\n            if i < len(vertical_grid_labels):            \r\n                if prefix_toggle:\r\n                    grid.Name = prefix + str(vertical_grid_labels[i])\r\n                else:\r\n                    grid.Name = str(vertical_grid_labels[i])\r\n        for i, grid in enumerate(horizontal_grids):\r\n            if i < len(horizontal_grid_labels):            \r\n                if prefix_toggle:\r\n                    grid.Name = prefix + str(horizontal_grid_labels[i])\r\n                else:\r\n                    grid.Name = str(horizontal_grid_labels[i])\r\n        t.Commit()\r\n    return {\r\n    \"vertical grids\": vertical_grids, \"horizontal grids\" : horizontal_grids}\r\n    \r\nOUT = Renumber(vertical_grids, horizontal_grids, vertical_grid_labels, horizontal_grid_labels, prefix, prefix_toggle)",
+      "Engine": "IronPython2",
+      "VariableInputPorts": true,
+      "Id": "2a8eb4fb114144a38b2161a9fbc75942",
+      "Inputs": [
+        {
+          "Id": "f1c4b54e467444b19edf7c2069ba28f5",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e23790cc3d1f4bc2b5f8442643128d14",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "08da92ac889e46478560ecffd26920fd",
+          "Name": "IN[2]",
+          "Description": "Input #2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c1356c3165354f519b9246695881fd6d",
+          "Name": "IN[3]",
+          "Description": "Input #3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "fe2b15cfba824184b207c8cca9fee6e6",
+          "Name": "IN[4]",
+          "Description": "Input #4",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "9a7652f35f2f4a1eaff373648f67a758",
+          "Name": "IN[5]",
+          "Description": "Input #5",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "d4d822fdb5704658af47385892cc4bf6",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded Python script."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "NodeType": "StringInputNode",
+      "InputValue": ".",
+      "Id": "399ed3b08f0e4231bbdff2916ea64c59",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "9b78915762814dba8bc865f28e71aa97",
+          "Name": "",
+          "Description": "String",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.BoolSelector, CoreNodeModels",
+      "NodeType": "BooleanInputNode",
+      "InputValue": false,
+      "Id": "bbe9a2fab79c437a8d0a9d794bc076d2",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "f10c5c1098644bb58e63b3a584440b25",
+          "Name": "",
+          "Description": "Boolean",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Selection between a true and false."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.BoolSelector, CoreNodeModels",
+      "NodeType": "BooleanInputNode",
+      "InputValue": false,
+      "Id": "85a1418a2fae411ebdb0a398efaeafb9",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "1aa3fad2cdd04d6f89f04b87b112864f",
+          "Name": "",
+          "Description": "Boolean",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Selection between a true and false."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
+      "FunctionSignature": "f076090f-2845-4c5c-966b-9e523ef8453b",
+      "FunctionType": "Graph",
+      "NodeType": "FunctionNode",
+      "Id": "682ab3e164bc423da07afbf113d21a8b",
+      "Inputs": [
+        {
+          "Id": "cec0bfd36a104efb8da34cf591464809",
+          "Name": "",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "70b56a2e316f447d905b1bedebfee805",
+          "Name": "Toggle",
+          "Description": "bool\nDefault value : false",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "1626e0f2dbae4af8a974d5484f4723cd",
+          "Name": "OUT",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Allows to perform a manual selection with a category filter."
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "fbd09fd57efa4220ba3f2dad7903b281",
+      "End": "e9eef38a4ae143b1ac38e3b3a0e73cf9",
+      "Id": "d54cb0fd71c848fcaffb1ea9d12245a6",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "fbd09fd57efa4220ba3f2dad7903b281",
+      "End": "08da92ac889e46478560ecffd26920fd",
+      "Id": "92713ed68c9447cd99b091f71858d5f9",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "b47e117313ca40faaf763d3b5857b3c7",
+      "End": "c1356c3165354f519b9246695881fd6d",
+      "Id": "c2e2ba7e154d453ca9753e9e11a98790",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "be2894748e1a43c28a195649a38e31a1",
+      "End": "fe2b15cfba824184b207c8cca9fee6e6",
+      "Id": "ef1017a22e8846bb9258b0624e05eb65",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "267f08980850424cb001735b947ba78c",
+      "End": "cec0bfd36a104efb8da34cf591464809",
+      "Id": "187eab1b9c984a39a8eeb85320b5ada1",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "52104139f478480088ab6697abbfe16a",
+      "End": "f1c4b54e467444b19edf7c2069ba28f5",
+      "Id": "8df0f6bceb1f40c6905bf54f8b1709a2",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "f0246adba8fa4048911d57022dcdc69c",
+      "End": "e23790cc3d1f4bc2b5f8442643128d14",
+      "Id": "799fc2c2219e4733ba759da8e5debd39",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "e701cb42589f434b8c46b2d167e1715a",
+      "End": "70b56a2e316f447d905b1bedebfee805",
+      "Id": "3f1a0b763ff94fb2a5f3a10d9470cc25",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "90592d658deb483fa9db125b4c696969",
+      "End": "7e5c25afbeee422391cb88e568e31a8b",
+      "Id": "a7e1d34ff48c4a8a8de3bb87647a7abf",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "be6abe04e578488993038a9a1ae1e71c",
+      "End": "b139120963394f02affc7ccd79c4a212",
+      "Id": "910eff2c1eeb4838ab952cbaf5815f70",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "a53aa48512ad4c3d8cf82cc907ad1142",
+      "End": "9a7652f35f2f4a1eaff373648f67a758",
+      "Id": "b1a4342a7d1d44d89459eb2888010c9f",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "47b1fd5797d541f49ec503ab1db6972f",
+      "End": "acc14305775b411a9583f83eba269438",
+      "Id": "ed3b3bf0714a41ce822ac42c7cfb0e39",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "9b78915762814dba8bc865f28e71aa97",
+      "End": "578d004e630d424d84e84075060f9ef2",
+      "Id": "05b4424aee9d42efadc6db79fa804ac9",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "f10c5c1098644bb58e63b3a584440b25",
+      "End": "d71d0d1eb9334f0ca29a7911bd4c722c",
+      "Id": "38f66e57fbcd433da63a2f7d857e459b",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "1aa3fad2cdd04d6f89f04b87b112864f",
+      "End": "32e49dcd727e412dbade7021e4980891",
+      "Id": "caaecc0c0a6e45ec8a008035b6205525",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "1626e0f2dbae4af8a974d5484f4723cd",
+      "End": "7306d32b169b47b091c72dbfb1cafb5b",
+      "Id": "34b55d2ab3874171bb76063dc3e486bd",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [
+    "58f9bd74-bb7e-420d-a95b-8ca242296c2c",
+    "f076090f-2845-4c5c-966b-9e523ef8453b"
+  ],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "Clockwork for Dynamo 2.x",
+      "Version": "2.3.0",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "b0c46d8ad0c2495086630a39492cb26d"
+      ]
+    },
+    {
+      "Name": "Data-Shapes",
+      "Version": "2019.2.42",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "682ab3e164bc423da07afbf113d21a8b"
+      ]
+    }
+  ],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.12",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "1.10",
+      "Data": {}
+    }
+  ],
+  "Author": "None provided",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 100.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.13.1.3887",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -20.479065940194438,
+      "EyeY": 22.185654768543973,
+      "EyeZ": 98.982152044273121,
+      "LookX": 20.479065940194438,
+      "LookY": -22.185654768543973,
+      "LookZ": -98.982152044273121,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Name": "Code Block",
+        "ShowGeometry": true,
+        "Id": "c070775af1d44663aeeaf1d64db6c4a1",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1649.2592567588144,
+        "Y": 297.56750120636309
+      },
+      {
+        "Name": "Character.FromNumber",
+        "ShowGeometry": true,
+        "Id": "b0c46d8ad0c2495086630a39492cb26d",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1887.5168504959768,
+        "Y": 383.55519271574474
+      },
+      {
+        "Name": "Code Block",
+        "ShowGeometry": true,
+        "Id": "7ee86ede8b7245e6b00e8908077e47ea",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1116.8418426564181,
+        "Y": 580.34346831417042
+      },
+      {
+        "Name": "Categories",
+        "ShowGeometry": true,
+        "Id": "077f09ce03ca446e95ea2ef4a630050e",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1611.4056657281387,
+        "Y": -271.73112836040127
+      },
+      {
+        "Name": "Code Block",
+        "ShowGeometry": true,
+        "Id": "711c5a1e3cc249eaa758e642eb0580f0",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2817.445811539455,
+        "Y": -34.156131563428517
+      },
+      {
+        "Name": "Reset Grid Selecting",
+        "ShowGeometry": true,
+        "Id": "afef03aedc6246a98bf6418253a108c6",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1611.40566572814,
+        "Y": -123.731128360401
+      },
+      {
+        "Name": "Boolean",
+        "ShowGeometry": true,
+        "Id": "52b19e8626994b0885ef7f5d4ce94325",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1645.5596142996778,
+        "Y": 437.460239061419
+      },
+      {
+        "Name": "Prefix Label",
+        "ShowGeometry": true,
+        "Id": "fdc82f48a554469daad17ca67a67bb5e",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 847.462717946963,
+        "Y": 500.576385810595
+      },
+      {
+        "Name": "Prefix Yes/No",
+        "ShowGeometry": true,
+        "Id": "2a0cb3dae5d145ae9217c185425b72de",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 837.56284795414172,
+        "Y": 765.508199280743
+      },
+      {
+        "Name": "Separate Grids Horizontally/Vertically",
+        "ShowGeometry": true,
+        "Id": "9999e594f53e48e49d42fc7d16025ad5",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2361.445811539455,
+        "Y": -34.156131563428517
+      },
+      {
+        "Name": "Renumber Grids",
+        "ShowGeometry": true,
+        "Id": "2a8eb4fb114144a38b2161a9fbc75942",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3165.3068536539718,
+        "Y": 197.83961189780644
+      },
+      {
+        "Name": "Prefix Separator",
+        "ShowGeometry": true,
+        "Id": "399ed3b08f0e4231bbdff2916ea64c59",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 842.995963469285,
+        "Y": 629.87319105946347
+      },
+      {
+        "Name": "Reverse Order Vertical Grids",
+        "ShowGeometry": true,
+        "Id": "bbe9a2fab79c437a8d0a9d794bc076d2",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 849.12942068432812,
+        "Y": 144.65250803024304
+      },
+      {
+        "Name": "Reverse Order Horizontal Grids",
+        "ShowGeometry": true,
+        "Id": "85a1418a2fae411ebdb0a398efaeafb9",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 845.92326526696934,
+        "Y": 16.002505434513637
+      },
+      {
+        "Name": "Select Model Elements of Category",
+        "ShowGeometry": true,
+        "Id": "682ab3e164bc423da07afbf113d21a8b",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1908.6141612386,
+        "Y": -212.743392802193
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "5659e6878d45496194fb5cf4247fb5ae",
+        "Title": "Renumber Grids",
+        "DescriptionText": "Renumbering grids",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "2a8eb4fb114144a38b2161a9fbc75942",
+          "d8fd90183f8b45cbb60ded0fd49accf2"
+        ],
+        "HasNestedGroups": false,
+        "Left": 3151.8887470489244,
+        "Top": 81.839611897806435,
+        "Width": 216.41810660504734,
+        "Height": 548.91372889962315,
+        "FontSize": 36.0,
+        "InitialTop": 197.83961189780644,
+        "InitialHeight": 456.91372889962315,
+        "TextblockHeight": 106.0,
+        "Background": "#FFFFAA45"
+      },
+      {
+        "Id": "b5261585520441018daa9bac48cb9308",
+        "Title": "Select Grids",
+        "DescriptionText": "Select grids",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "077f09ce03ca446e95ea2ef4a630050e",
+          "afef03aedc6246a98bf6418253a108c6",
+          "682ab3e164bc423da07afbf113d21a8b"
+        ],
+        "HasNestedGroups": false,
+        "Left": 1601.4056657281387,
+        "Top": -344.73112836040127,
+        "Width": 652.20849551046126,
+        "Height": 353.00000000000028,
+        "FontSize": 36.0,
+        "InitialTop": -271.73112836040127,
+        "InitialHeight": 293.00000000000028,
+        "TextblockHeight": 63.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "2e2a226ad5484c7288d4aa2069dfaf5e",
+        "Title": "Input Variables",
+        "DescriptionText": "Input for grid labels",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "fdc82f48a554469daad17ca67a67bb5e",
+          "2a0cb3dae5d145ae9217c185425b72de",
+          "399ed3b08f0e4231bbdff2916ea64c59",
+          "bbe9a2fab79c437a8d0a9d794bc076d2",
+          "85a1418a2fae411ebdb0a398efaeafb9",
+          "7ee86ede8b7245e6b00e8908077e47ea"
+        ],
+        "HasNestedGroups": false,
+        "Left": 827.56284795414172,
+        "Top": -56.997494565486363,
+        "Width": 665.27899470227635,
+        "Height": 954.50569384622941,
+        "FontSize": 36.0,
+        "InitialTop": 16.002505434513637,
+        "InitialHeight": 894.50569384622941,
+        "TextblockHeight": 63.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "467495a015d94438a9b9b145fa383ead",
+        "Title": "Separate Grids Horizontally and Vertically",
+        "DescriptionText": "Separates grids and put it in two lists",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "711c5a1e3cc249eaa758e642eb0580f0",
+          "9999e594f53e48e49d42fc7d16025ad5",
+          "221885af6dac437aa00b68b6791ff66d"
+        ],
+        "HasNestedGroups": false,
+        "Left": 2351.445811539455,
+        "Top": -150.15613156342852,
+        "Width": 651.0,
+        "Height": 394.23345363719937,
+        "FontSize": 36.0,
+        "InitialTop": -34.156131563428517,
+        "InitialHeight": 345.23345363719937,
+        "TextblockHeight": 106.0,
+        "Background": "#FF848484"
+      },
+      {
+        "Id": "ecf7ad098f8c4ab1b995175a196f77eb",
+        "Title": "Grid Labels in Numbers and Characters",
+        "DescriptionText": "Labels for Horizontal and Vertical Grids",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "c070775af1d44663aeeaf1d64db6c4a1",
+          "b0c46d8ad0c2495086630a39492cb26d",
+          "52b19e8626994b0885ef7f5d4ce94325"
+        ],
+        "HasNestedGroups": false,
+        "Left": 1635.5596142996778,
+        "Top": 181.56750120636309,
+        "Width": 507.95723619629871,
+        "Height": 387.89273785505588,
+        "FontSize": 36.0,
+        "InitialTop": 297.56750120636309,
+        "InitialHeight": 284.89273785505588,
+        "TextblockHeight": 106.0,
+        "Background": "#FF848484"
+      },
+      {
+        "Id": "d8fd90183f8b45cbb60ded0fd49accf2",
+        "Title": "IN[0] = Vertical grids\nIN[1] = Horizontal grids\nIN[2] = Vertical grid labels\nIN[3] = Horizontal grid labels\nIN[4] = Prefix label\nIN[5] = Prefix toggle (Yes/No)",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [],
+        "HasNestedGroups": false,
+        "Left": 3161.8887470489244,
+        "Top": 509.75334079742959,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "221885af6dac437aa00b68b6791ff66d",
+        "Title": "IN[0] = Selected Grids\nIN[1] = Reverse Horizontal Grid Order (Yes/No)\nIN[2] = Reverse Vertical Grid Order (Yes/No)",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [],
+        "HasNestedGroups": false,
+        "Left": 2363.444542663125,
+        "Top": 166.07732207377086,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      }
+    ],
+    "X": -327.950611243343,
+    "Y": 305.07382969571756,
+    "Zoom": 0.44124026636342106
+  }
+}
